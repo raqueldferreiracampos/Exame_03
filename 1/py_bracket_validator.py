@@ -11,15 +11,38 @@ def bracket_validator(s: str) -> bool:
 
 def bracket_validator(s: str) -> bool:
     stack = []
-    dic = {"(": ")", "[": "]", "{": "}"}
     for i in s:
-        if i in ("({["):
+        if i in "([{":
+            stack.append(i)
+        elif i in ")}]":
+            if not stack:
+                return False
+            if stack[-1] == "(" and i == ")":
+                stack.pop()
+            elif stack[-1] == "{" and i == "}":
+                stack.pop()
+            elif stack[-1] == "[" and i == "]":
+                stack.pop()
+            else:
+                return False
+    if not stack:
+        return True
+    else:
+        return False
+
+
+
+def bracket_validator(s: str) -> bool:
+    dic = {"(": ")", "[": "]", "{": "}"}
+    stack = []
+
+    for i in s:
+        if i in dic.keys():
             stack.append(i)
         if stack and dic[stack[-1]] == i:
             stack.pop()
         elif not stack and i in dic.values():
             return False
-    if not stack:
-        return True
-    else:
-        return False
+    return not stack
+
+print(bracket_validator("()"))

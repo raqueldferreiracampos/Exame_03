@@ -6,3 +6,6 @@ Return "ERROR" for invalid inputs.
 
 def number_base_converter(number: str, from_base: int, to_base: int) -> str:
 """
+
+
+

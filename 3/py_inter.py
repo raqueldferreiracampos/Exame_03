@@ -5,3 +5,11 @@ they appear in the first string.
 
 def inter(s1: str, s2: str) -> str:
 """
+
+def inter(s1: str, s2: str) -> str:
+    new = ""
+    for i in s1:
+        if i in s2 and i not in new:
+            new += i
+    return new
+print(inter("hello", "world"))

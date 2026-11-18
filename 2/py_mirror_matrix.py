@@ -4,3 +4,8 @@ is reversed.
 
 def mirror_matrix(matrix: list[list[int]]) -> list[list[int]]:
 """
+def mirror_matrix(matrix: list[list[int]]) -> list[list[int]]:
+    new_matrix = []
+    for row in matrix:
+        new_matrix.append(row[::-1])
+    return new_matrix

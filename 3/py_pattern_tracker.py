@@ -6,3 +6,12 @@ A 9 followed by a 0 is NOT a valid pair.
 
 def pattern_tracker(text: str) -> int:
 """
+def pattern_tracker(text: str) -> int:
+    leng = len(text) - 1
+    count = 0
+    for i in range(0, leng):
+        if text[i].isdigit() and text[i + 1].isdigit():
+            if int(text[i + 1]) == int(text[i]) + 1:
+                count += 1
+    return count
+

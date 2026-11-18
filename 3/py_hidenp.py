@@ -6,3 +6,12 @@ Function is case-sensitive.
 
 def hidenp(small: str, big: str) -> bool:
 """
+def hidenp(small: str, big: str) -> bool:
+    leng = len(small)
+    i = 0
+    for j in big:
+        if i < leng and small[i] == j:
+            i += 1
+    return len(small) == i
+
+print(hasattr("ola", "jjjolaa"))
